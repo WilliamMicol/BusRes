@@ -9,19 +9,19 @@
 #include <iostream>
 
 void install(){
-    std::cout << "Installing...\n";
+    std::cout << "Installing things...\n";
 }
 
 void reservation(){
-    std::cout << "Reserving...\n";
+    std::cout << "Reserving things...\n";
 }
 
 void show(){
-    std::cout << "Showing...\n";
+    std::cout << "Showing things...\n";
 }
 
 void buses(){
-    std::cout << "Bussing...\n";
+    std::cout << "Bussing things...\n";
 }
 
 void exit(){
