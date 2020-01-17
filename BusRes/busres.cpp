@@ -42,18 +42,62 @@ class Bus
 
 };
 
-//     void addBus(Bus b, Bus param[]){
-//         Bus var[sizeof(param)+1];
-//         for(int i = 0; i<sizeof(param); i++){
-//             var[i] = param[i];
-//         }
-//         var[sizeof(param)+1] = b;
-//         param = new Bus[sizeof(var)];
-//         for(int i = 0; i<sizeof(var); i++){
-//             param[i] = var[i];
-//     }
+    void addBus(Bus param[]){
+    	  int busN;
+		  string driverN;
+		  string arrivalT;
+		  string departureT;
+		  string desti;
+		  string origi;
+  
+  
+	    cout << "Bus Number:";
+	    cin >> busN;
+	    cout << "\n";
+	    cin.ignore();
+	    cout << "Driver Name:";
+	    getline(cin, driverN);
+	    cout << "\n";
+	    cout << "Arrival Time:";
+	    getline(cin, arrivalT);
+	    cout << "\n";
+	    cout << "Departure Time:";
+	    getline(cin, departureT);
+	    cout << "\n";
+	    cout << "Destination:";
+	    getline(cin, desti);
+	    cout << "\n";
+	    cout << "Origin:";
+	    getline(cin, origi);
+	    cout << "\n";
+
+        Bus var[sizeof(param)+1];
+        for(int i = 0; i<sizeof(param); i++){
+            var[i].busNumber = param[i].busNumber;
+            var[i].driverName = param[i].driverName;
+            var[i].arrivalTime = param[i].arrivalTime;
+            var[i].departureTime = param[i].departureTime;
+            var[i].destination = param[i].destination;
+            var[i].origin = param[i].origin;
+        }
+        var[sizeof(param)+1].busNumber = busN;
+        var[sizeof(param)+1].driverName = driverN;
+        var[sizeof(param)+1].arrivalTime = arrivalT;
+        var[sizeof(param)+1].departureTime = departureT;
+        var[sizeof(param)+1].destination = desti;
+        var[sizeof(param)+1].origin = origi;
+        param = new Bus[sizeof(var)];
+        for(int i = 0; i<sizeof(var); i++){
+            param[i].busNumber = var[i].busNumber;
+            param[i].driverName = var[i].driverName;
+            param[i].arrivalTime = var[i].arrivalTime;
+            param[i].departureTime = var[i].departureTime;
+            param[i].destination = var[i].destination;
+            param[i].origin = var[i].origin;
+
+    }
     
-// }
+}
 
 Bus theBuses[1] = {Bus(1,"t","t","t","t","t")};
 
@@ -67,34 +111,19 @@ void showBus(int theBus, Bus param[]){
 }
 
 void install(){
-  
-  int busNumber;
-  string driverName;
-  string arrivalTime;
-  string departureTime;
-  string destination;
-  string origin;
-  
-  
-    cout << "Bus Number:";
-    cin >> busNumber;
-    cout << "\n";
-    cin.ignore();
-    cout << "Driver Name:";
-    getline(cin, driverName);
-    cout << "\n";
-    cout << "Arrival Time:";
-    getline(cin, arrivalTime);
-    cout << "\n";
-    cout << "Departure Time:";
-    getline(cin, departureTime);
-    cout << "\n";
-    cout << "Destination:";
-    getline(cin, destination);
-    cout << "\n";
-    cout << "Origin:";
-    getline(cin, origin);
-    cout << "\n";
+
+  	while(2>1){
+	addBus(theBuses);
+	int var = 0;
+	cout << "Do you wish to add another bus? If so type 1" << endl;
+	cin >> var;
+		if(var == 1){
+			break;
+		} else {
+			continue;
+		}
+	}
+	
 
     // cout << busNumber << endl;
     // cout << driverName << endl;
@@ -104,11 +133,11 @@ void install(){
     // cout << origin << endl;
 
     // addBus(Bus(busNumber, driverName, arrivalTime, departureTime, destination, origin), theBuses);
-    Bus newBusList[1] = {Bus(busNumber, driverName, arrivalTime, departureTime, destination, origin)};
-    showBus(0, newBusList);
+    // Bus newBusList[2] = {Bus(busNumber, driverName, arrivalTime, departureTime, destination, origin), Bus(busNumber, driverName, arrivalTime, departureTime, destination, origin)};
+    // showBus(0, newBusList);
 
-    // for(int i = 0; i<sizeof(theBuses); i++){
-    //     cout << theBuses[i].busNumber << endl;
+    // for(int i = 0; i<sizeof(newBusList); i++){
+    //     showBus(i, newBusList);
     // }
 
     
